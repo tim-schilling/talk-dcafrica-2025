@@ -5,20 +5,1076 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>reveal.js</title>
+		<link rel="stylesheet" href="css/fonts/Roboto-SemiBold.ttf">
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/white-contrast.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			@font-face {
+				font-family: 'Roboto SemiBold';
+				src: url('/css/fonts/Roboto-SemiBold.ttf') format('truetype');
+				font-weight: 600;
+				font-style: normal;
+				font-display: swap; /* improves loading performance */
+		}
+			:root {
+				--r-main-font: 'Roboto SemiBold', "Helvetica";
+				--r-heading-font: 'Roboto SemiBold', "Helvetica";
+				--r-heading-text-transform: none;
+				--r-main-font-size: 2.5em;
+				--r-heading1-size: 2em;
+				--r-heading2-size: 1.8em;
+				--r-heading3-size: 1.6em;
+				--r-heading4-size: 1.4em;
+				--r-heading5-size: 1.2em;
+			}
+			.reveal .slides {
+				margin-top: 0.25em;
+			}
+			.container {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+			}
+			.col {
+				flex: 1;
+			}
+			li.list-style-none {
+				list-style: none;
+				margin: 0.5em 0;
+			}
+			li.muted {
+				font-size: .7em;
+				color: #777;
+			}
+			h1.muted, h2.muted, h3.muted, h4.muted, h5.muted {
+				--r-heading1-size: 1.7em;
+				--r-heading2-size: 1.5em;
+				--r-heading3-size: 1.3em;
+				--r-heading4-size: 1.1em;
+				--r-heading5-size: 0.9em;
+				color: #777;
+			}
+			.fixed-width-list {
+				font-size: 1.3em;
+				text-align: start;
+				width: 100%;
+				min-height: 80vh;
+			}
+			.slide-footer {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				margin-bottom: .75em;
+				width: 100%;
+				text-align: right;
+				font-size: 0.6em;
+				color: #666;
+				z-index: 1000;
+			}
+			.slide-footer-content {
+				margin-right: 6.2%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<div style="display:flex;flex-direction: column;height: 65vh;justify-content: space-between;">
+						<div></div>
+						<div>
+							<h1>Contributing to the Django community</h1>
+							<h4>by Tim Schilling</h4>
+						</div>
+						<div>
+							<p>Slides and notes: <a href="https://github.com/tim-schilling/talk-dcafrica-2025">github.com/tim-schilling/talk-dcafrica-2025</a></p>
+						</div>
+					</div>
+					<aside class="notes">
+						Hamjambo marafiki, jina langu ni Tim Schilling. Mimi ni mhandisi wa programu katika AspirEDU ambapo tunafanya uchanganuzi wa elimu.
+					</aside>
+				</section>
+				<section>
+					<h2>I am from Watertown, WI, USA</h2>
+					<img style="max-height: 50vh" src="images/watertown_nation_level.png">
+					<h5>23,000 people and 750 people/km<sup>2</sup></h5>
+					<h5>Arusha: 617,000 people and 2,300 people/km<sup>2</sup></h5>
+					<aside class="notes">
+						As you may have noticed from my accent, I'm not from around here. I'm from the US. I've moved around a bit, but I grew up in Watertown in the state of Wisconsin. I feel like it was a small town with about 20,000 people, but then I find people who grew up in towns of 500 people. So I guess it's relative.
+					</aside>
+				</section>
+				<section>
+					<h2>Watertown is famous for...</h2>
+					<div class="r-stack">
+						<div class="fixed-width-list fragment fade-out" data-fragment-index="1">
+							<ul>
+								<li>First Kindergartern in the US</li>
+								<li>The Octagon House???</li>
+							</ul>
+						</div>
+						<div class="fragment" data-fragment-index="1">
+							<img style="height: 50vh;" src="images/octagon_house.jpg">
+							<h5>Octagon House, 2007 by Iulus Ascanius</h5>
+						</div>
+					</div>
+					<aside class="notes">
+						My town has two claims to fame. One, is that we were the first town in America to have a kindergarten, which is a preschool class that helps children transition from home to school with an educational approach focused on singing, drawing and playing. Which is actually pretty cool. The other claim to fame is that we have a famous building known as the Octogon house. Which is famous because it has 8 sides.
+						<br /><br />
+						Yeah, I don't get it either.
+						<br /><br />
+						My childhood in Watertown was a somewhat insulated experience. In fact I never tried curry until I was in my 20's. Which is disappointing, because it's a fantastic food.
+					</aside>
+				</section>
+				<section>
+					<aside class="notes">
+						I actually had it here last night.
+						<br /><br />
+						TODO: Add comment about food here
+						<br /><br />
+						Which brings me to Django. Because without the django community, I may have never come to visit Arusha. Which is sad because this city is amazing. Open source software and the Django community in particular has helped me develop friendships around the globe and I'd like to extend that opportunity to you.
+					</aside>
+				</section>
+				<section>
+					<h2>Community Involvements</h2>
+					<div style="margin-top: 1em" class="container">
+						<div class="col">
+							<h4>Current</h4>
+							<ul>
+								<li>Django 6.x Steering Council</li>
+								<li>Djangonaut Space🚀 admin</li>
+								<li>Django Commons admin</li>
+								<li>django-debug-toolbar</li>
+								<li>django-simple-history</li>
+								<li>django-auth-adfs</li>
+							</ul>
+						</div>
+						<div class="col">
+							<h4>Past</h4>
+							<ul>
+								<li>DjangoCon US organizer</li>
+								<li>DEFNA Secretary</li>
+								<li>Djangonaut Space🚀 navigator</li>
+								<li>Google Summer of Code mentor</li>
+								<li>Answering questions on Forum & Discord</li>
+								<li>Django Discord moderator</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						Before we dive into the technical stuff, and in case people couldn't understand my Swahili from earlier, my name is Tim Schilling and I've been contributing to the Django community since 2014, starting with the django debug toolbar. I'm on the Django 6.x Steering Council, an admin for Djangonaut Space, an admin for Django Commons and I help maintain a few libraries. I've also been a navigator for a Djangonaut Space team and mentored a Google Summer of Code project. In the past I helped organize DjangoCon US, was secretary of DEFNA, helped answering questions on the forum and discord and was a moderator of the Django discord.
+						<br /><br />
+						I've always enjoyed helping people, but when I met the Django community in person in San Diego at DjangoCon US 2022, I began investing a lot of energy into the community.
+						<br /><br />
+						I hope with the rest of our time I can convince you that investing some of your time, energy and self into the Django community is a worthwhile investment.
+						<br /><br />
+						I'm going to start by sharing a bit about the community orgs I'm a part of. Steering Council, Django Commons and Djangonaut Space all are working to help contributors, but from different angles. Then we're going to shift gears and I'll share where you can get involved, how to decide where to invest your time and finish with why I think you should participate in the community.
+						<br /><br />
+						Sound good?
+					</aside>
+				</section>
+				<section>
+				  <h1>Raise your hand if you follow the Steering Council</h1>
+					<aside class="notes">
+						Let's start with Steering Council. First, raise your hand if you have heard of the Steering Council and know what we're working on?
+					</aside>
+				</section>
+				<section>
+					<h2>Steering Council</h2>
+					<div class="container">
+						<div class="col">
+							<img style="width: 20vh" src="images/carlton.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/emma.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/frank.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/lily.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/tim.jpg" />
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<h4>Carlton Gibson</h4>
+						</div>
+						<div class="col">
+							<h4>Emma Delescolle</h4>
+						</div>
+						<div class="col">
+							<h4>Frank Wiles</h4>
+						</div>
+						<div class="col">
+							<h4>Lily Acorn</h4>
+						</div>
+						<div class="col">
+							<h4>Tim Schilling</h4>
+						</div>
+					</div>
+					<aside class="notes">
+						It's a group of five individuals that are elected every two years by the Django Software Foundation individual members. Steering Council elections coincide with the major version of the Django. The 6.x Steering Council consists of Carlton Gibson, Emma Delescolle, Frank Wiles, Lily Acorn and myself.
+						<br /><br />
+						The Steering Council is responsible for the technical aspect of the Django framework. We tend to be more focused on strategy and longer term concerns. However, we also exist to be the decision maker in cases where the community is unable to come to a consensus.
+						<br /><br />
+						This iteration of the Steering Council is a bit different than those in the past. We've been focusing a lot on the proactive parts of the role.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Steering Council focus</h2>
+					<div class="fixed-width-list">
+					<ul>
+						<li>Improve third-party story</li>
+						<li>Improve contributor experience</li>
+					</ul>
+					</div>
+					<aside class="notes">
+						The main areas of our focus for our first year has been improving the third-party story of Django and improving the contributor experience.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Steering Council focus</h2>
+					<div class="fixed-width-list">
+					<ul>
+						<li>Improve third-party story</li>
+						<li class="list-style-none">
+							<ul>
+								<li>Make it easier to find packages</li>
+								<li>Steering Council ecosystem page</li>
+								<li><a href="https://www.djangoproject.com/community/ecosystem/">djangoproject.com/community/ecosystem/</a></li>
+							</ul>
+						</li>
+						<li class="muted">Improve contributor experience</li>
+					</ul>
+					</div>
+					<aside class="notes">
+						We as a group believe that the third-party ecosystem is a powerful component of Django. It allows developers to quickly add massive amounts of functionality to their application so they can be more productive. It also acts as an outlet for the pressure to add more features to Django. All applications have different requirements, so it makes sense to allow people to choose which features. A vibrant third party ecosystem supports this by allowing people to effectively form groups to discuss, implement and iterate based on their needs.
+						<br /><br />
+						We on the Steering Council want to highlight the third-party ecosystem. We want to make it easier for new and old Django developers to find helpful packages. To do so, we've added our curated list of packages, resources and orgs to a page on the djangoproject.com website. We're working on adding additional content to the site to continue to highlight the ecosystem.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Steering Council focus</h2>
+					<div class="fixed-width-list">
+					<ul>
+						<li class="muted">Improve third-party story</li>
+						<li>Improve contributor experience</li>
+						<li class="list-style-none">
+							<ul>
+								<li>New features repo</li>
+								<li><a href="https://github.com/django/new-features">github.com/django/new-features</a></li>
+								<li>Add your own ideas!</li>
+								<li>Share feedback on other ideas</li>
+							</ul>
+						</li>
+					</ul>
+					</div>
+					<aside class="notes">
+						Another thing we've been working on is improving the contributor experience. Specifically, the process to add new features to Django. We started a new flow for folks to suggest new features at the GitHub repo, github.com/django/new-features. We're hoping to provide more clarity to folks on how add a feature to Django. We have highlighted the various stages an idea will go through and what the gates are for it to move to the next one.
+						<br /><br />
+						One thing you as community members can do today is to visit that repository and share your ideas for Django. If you have an idea of something else Django should be able to do, please open an issue.
+						<br /><br />
+						Another thing you can do today is provide feedback on ideas. We have implemented a system where people can use the emoji reactions to indicate their preference without needing to comment. Letting folks know which ideas excite you or which you're not a fan of is extremely valuable to the community.  It allows us to focus our energy on those things that the community desires.
+					</aside>
+				</section>
+				<section>
+					<h2>Have questions?</h2>
+					<div class="fixed-width-list">
+					<ul>
+						<li>Ask me in person!</li>
+						<li>DSF Office Hours - Wed @ 6pm UTC</li>
+						<li><a href="https://djangoproject.com/office-hours/">djangoproject.com/office-hours/</a></li>
+						<li>Contact me directly: better-simple.com</li>
+						<li>Watch repo <a href="https://github.com/django/steering-council/">github.com/django/steering-council</a></li>
+					</ul>
+					</div>
+					<aside class="notes">
+						If you have questions on any of this, which I hope you do, feel free to stop me in the hallway during the conference and ask. I also try to attend the DSF office hours that the board holds, so if you think of something later, you can likely find me there. You're all also welcome to email me or reach me on Mastodon or X. You can also keep tabs on us by watching to the steering council repo on github.
+					</aside>
+				</section>
+				<section>
+					<h1>Raise your hand if you've heard of Django Commons</h1>
+					<aside class="notes">
+						Let's move onto Django Commons. How many folks have heard of Django Commons?
+					</aside>
+				</section>
+				<section>
+					<h2>Django Commons admins</h2>
+					<div class="container">
+						<div class="col">
+							<img style="width: 20vh" src="images/daniel.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/lacey.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/ryan.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/tim.jpg" />
+						</div>
+						<div class="col">
+							<img style="width: 20vh" src="images/storm.jpg" />
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<h4>Daniel Moran</h4>
+						</div>
+						<div class="col">
+							<h4>Lacey Henschel</h4>
+						</div>
+						<div class="col">
+							<h4>Ryan Cheley</h4>
+						</div>
+						<div class="col">
+							<h4>Tim Schilling</h4>
+						</div>
+						<div class="col">
+							<h4>Storm Heg</h4>
+						</div>
+					</div>
+					<aside class="notes">
+						If you haven't heard of this organization, it's a community effort to improve the maintenance experience in the third-party package ecosystem. The org was started by and is currently managed by, Daniel Moran, Lacey Henschel, Ryan Cheley, myself and Storm Heg.
+					</aside>
+				</section>
+				<section>
+					<h2>Django Commons</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li><a href="https://django-commons.org">django-commons.org</a></li>
+							<li>Supports 12 packages today</li>
+							<li>Improve the Python package maintenance experience</li>
+							<li>Community home for community packages</li>
+							<li>Automate as much as possible</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Remember how I was talking about how important the third-party package ecosystem is to Django? Well this org seeks improve the maintenance experience for that ecosystem. So whereas the Steering Council is focused on strategy for the Django Community, Django Commons is focused on making the day to day aspect of third-party package maintenance better.
+						<br /><br />
+						How does this happen? We provide a home for community-maintained packages, making it easy to transition between maintainers. The org's admins manage the teams and permissions for each package. And we seek to automate the logistical actions as much as possible for projects. Right now that is only the releasing to PyPI. Though Rahmat Akintola is working on automating releases to Test PyPI making the release process is testable. As someone who tends to break the release process for his project, I'm really looking forward to that.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Django Commons focus</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li>Project introduction videos</li>
+							<li class="list-style-none">
+								<ul>
+									<li>Provide architecture overview</li>
+									<li>Humanizes maintainers</li>
+									<li><a href="https://github.com/django-commons/django-tasks-scheduler">django-commons/django-tasks-scheduler</a></li>
+								</ul>
+							</li>
+							<li class="muted">Help find new contributors</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						We're currently working on helping maintainers record videos introducing their packages, providing an overview on its architecture and creating a human face to go with their username. The idea here is to make the package more accessible to new users and contributors. Daniel recorded the first one for django-tasks-scheduler. I'm really excited about this and I hope this becomes a pattern for the community.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Django Commons focus</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li class="muted">Project introduction videos</li>
+							<li>Help find new contributors</li>
+							<li class="list-style-none">
+								<ul>
+									<li>Meet and greets?</li>
+									<li>Have an idea, share it with us! Please!</li>
+									<li><a href="https://github.com/orgs/django-commons/discussions">github.com/orgs/django-commons/discussions</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						We're also looking for other ways to help maintainers find new contributors. There have been a few ideas posted on the GitHub discussions, but nothing has quite taken hold. If any of you have ideas or thoughts, please come join us in those discussions!
+						<br /><br />
+						There are other conversations going on about various open source topics too. For example, we have one about what standards should a third-party package meet.
+					</aside>
+				</section>
+				<section>
+					<h2>Get involved with Django Commons</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li>
+								Participate in discussions:
+								<br /><a style="margin-left: 1em" href="https://github.com/orgs/django-commons/discussions">github.com/orgs/django-commons/discussions</a></li>
+							<li style="margin: .5em 0">
+								Contribute to the packages:
+								<br /><a style="margin-left: 1em" href="https://django-commons.org/#projects">django-commons.org/#projects</a></li>
+							<li>
+								Contribute to Django Commons:
+								<br /><a style="margin-left: 1em" href="https://github.com/django-commons/controls/issues">github.com/django-commons/controls/issues</a></li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Another place for you to get involved today is to contribute to the packages themselves. Each project has contributor onboarding documentation as well as several issues that need solving. Lastly, there is a growing collection of Django Commons issues for the org and broader community. If you want to work on these, I'd be tremendously grateful.
+					</aside>
+				</section>
+				<section>
+					<h3>Djangonaut Space 🚀</h3>
+					<img style="height: 70vh" src="images/djangonaut_space.jpeg" />
+					<aside class="notes">
+						The last organization I'd like to share about is Djangonaut Space. Please raise your hand if you've heard of Djangonaut Space. Excellent. Okay, one more question. How many people plan on applying for the next session? Excellent, I look forward to reviewing your applications in September!
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Djangonaut Space🚀</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li>8-week mentorship program for contributing to Django</li>
+							<li>The next session is October 1st, 2025</li>
+							<li>We always need Navigators!</li>
+							<li>Find more info at <a href="https://djangonaut.space">djangonaut.space</a></li>
+						</ul>
+					</div>
+					<aside class="notes">
+						It's a community run organization created in 2023 by Dawn Wages, Rachell Calhoun, Sarah Abderemane, Sarah Boyce and myself. It was created to help people contribute to Django.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Djangonaut Space🚀</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li>8-week mentorship program for contributing to Django</li>
+							<li class="list-style-none">
+								<ul>
+									<li>Navigator == Technical mentor</li>
+									<li>Captain == Community mentor</li>
+									<li>Djangonaut == Mentee</li>
+									<li>Star == Stellar contributor to Django community</li>
+								</ul>
+							</li>
+							<li class="muted">The next session is October 1st, 2025</li>
+							<li class="muted">We always need Navigators!</li>
+							<li class="muted">Find more info at <a href="https://djangonaut.space">djangonaut.space</a></li>
+						</ul>
+					</div>
+					<aside class="notes">
+						The organization centers around a 8 week mentorship program. Each session has about 5 teams, each consisting of a navigator, which is the technical mentor and captain, the community mentor who mentor three djangonauts, the mentees who work on a specific project. I'm really proud to say we've had Stars, what we call Djangonauts after they complete their mission, these stars have stick around to become future leaders. We've had stars be captains, session organizers and this last time, we had our first star be navigator.
+						<br /><br />
+						That's pretty special for me. The admin team wants to see Djangonaut Space get to a flywheel state, where it's self-sufficient and moves forward without outside input. Seeing all these people go through the program and then come back to help the next groups is incredibly moving.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Djangonaut Space🚀</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li class="muted">8-week mentorship program for contributing to Django</li>
+							<li>The next session is October 1st, 2025</li>
+							<li class="list-style-none">
+								<ul>
+									<li>Applications open: September 10th, 2025</li>
+									<li>Applications close: September 17th, 2025</li>
+								</ul>
+							</li>
+							<li>We always need Navigators!</li>
+							<li>Find more info at <a href="https://djangonaut.space">djangonaut.space</a></li>
+						</ul>
+					</div>
+					<aside class="notes">
+						On our current todo list is preparing for the next session, making session organizing easier, and lastly making the application process smoother.
+						<br /><br />
+						Where we most need help is on the navigator sides of things. Sessions are always limited by the number of navigators. So if you regularly contribute to Django or a third-party package and would like to help mentor others, please let us know! If you're interested in being a mentee / Djangonaut, our next session will be October 1st 2025. Please visit our website, djangonaut.space to find all the details. We have a blog post that outlines our Djangonaut selection process. If you're thinking of applying, you should definitely read that.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 1)</h3>
+					<div class="fixed-width-list">
+						<ol>
+							<li>Contribute code to Django</li>
+							<li>Triage new tickets</li>
+							<li>Review Pull Requests (PRs)</li>
+							<li>Help translate Django</li>
+							<li>Discuss new feature ideas</li>
+						</ol>
+					</div>
+					<aside class="notes">
+						Alright, it's now time for us to shift gears. Up to this point, I've talked about three specific contributor organizations within the Django community, what they are up to and how you can help today.
+						<br /><br />
+						I'd like to talk to you about the other opportunities to get involved and there are lots. I hope I do all of them justice.
+						<br /><br />
+						Let's start with the obvious ones.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 1)</h3>
+					<div class="fixed-width-list">
+						<ol>
+							<li>Contribute code to Django</li>
+							<li value="1" class="list-style-none">
+								<ul style="font-size: .75em">
+									<li class="list-style-none">
+										<img style="max-height: 25vh; display:block" src="images/your_first_django_contribution.png" />
+										<a style="display:block" href="https://www.youtube.com/watch?v=A-3eTMNQ3rM">"Your first Django Contribution" by Sarah Boyce</a>
+									</li>
+									<li class="list-style-none">Remember: patience and perseverance</li>
+								</ul>
+							</li>
+							<li class="muted">Triage new tickets</li>
+							<li class="muted">Review Pull Requests (PRs)</li>
+							<li class="muted">Help translate Django</li>
+							<li class="muted">Discuss new feature ideas</li>
+						</ol>
+					</div>
+					<aside class="notes">
+						1. You can contribute to the Django code base. Sarah Boyce has an amazing talk on contributing to Django, "Your first Django Contribution"
+						<br /><br />
+						Keep in mind, contributing to Django core is challenging. It can take months before your code is committed to main. It requires patience and perseverance, but your efforts are greatly appreciated.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 1)</h3>
+					<div class="fixed-width-list">
+						<ol>
+							<li class="muted">Contribute code to Django</li>
+							<li>Triage new tickets</li>
+							<li value="2" class="list-style-none">
+								<ul>
+									<li><a style="display:block" href="https://code.djangoproject.com/query">code.djangoproject.com/query</a></li>
+									<li>Try to reproduce new bug reports</li>
+								</ul>
+							</li>
+							<li class="muted">Review Pull Requests (PRs)</li>
+							<li class="muted">Help translate Django</li>
+							<li class="muted">Discuss new feature ideas</li>
+						</ol>
+					</div>
+					<aside class="notes">
+						2. You can triage tickets by checking if bug reports are valid. This is where people try to reproduce bug reports.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 1)</h3>
+					<div class="fixed-width-list">
+						<ol>
+							<li class="muted">Contribute code to Django</li>
+							<li class="muted">Triage new tickets</li>
+							<li>Review Pull Requests (PRs)</li>
+							<li value="3" class="list-style-none">
+								<ul style="font-size: .75em">
+									<li class="list-style-none">
+										<img style="max-height: 25vh; display:block" src="images/django_needs_you_to_do_code_review.png" />
+										<a style="display:block" href="https://www.youtube.com/watch?v=A-3eTMNQ3rM">"Django needs you! (to do code review)" by Sarah Boyce</a>
+									</li>
+									<li class="list-style-none">Queue: <a href="https://dashboard.djangoproject.com">dashboard.djangoproject.com</a></li>
+								</ul>
+							</li>
+							<li class="muted">Help translate Django</li>
+							<li class="muted">Discuss new feature ideas</li>
+						</ol>
+					</div>
+					<aside class="notes">
+						3. You can review Pull Requests or PRs. The Fellows have said that this is an area that additional support is needed. Sarah Boyce has a wonderful talk on this topic, "Django needs you! (to do code review)".
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 1)</h3>
+					<div class="fixed-width-list">
+						<ol>
+							<li class="muted">Contribute code to Django</li>
+							<li class="muted">Triage new tickets</li>
+							<li class="muted">Review Pull Requests (PRs)</li>
+							<li>Help translate Django</li>
+							<li value="4" class="list-style-none">
+								<ul>
+									<li><a style="display:block" href="https://docs.djangoproject.com/en/stable/internals/contributing/localizing/">docs.djangoproject.com/en/stable/internals/contributing/localizing/</a></li>
+									<li>Search for "Localizing Django" in the docs</li>
+								</ul>
+							</li>
+							<li class="muted">Discuss new feature ideas</li>
+						</ol>
+					</div>
+					<aside class="notes">
+						4. Contribute to the translations. There's a documentation page that outlines the steps to get started. Though that link is a bit long, so if you search for "Localizing Django" in the docs, you can find it easier.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 1)</h3>
+					<div class="fixed-width-list">
+						<ol>
+							<li class="muted">Contribute code to Django</li>
+							<li class="muted">Triage new tickets</li>
+							<li class="muted">Review Pull Requests (PRs)</li>
+							<li class="muted">Help translate Django</li>
+							<li>Discuss new feature ideas</li>
+							<li value="5" class="list-style-none">
+								<ul>
+									<li><a style="display:block" href="https://github.com/django/new-features">github.com/django/new-features</a></li>
+									<li>Please share your opinions!</li>
+								</ul>
+							</li>
+						</ol>
+					</div>
+					<aside class="notes">
+						5. You can participate in the new features discussions I mentioned earlier. Reviewing the ideas there and providing feedback is a valuable form of contributing.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 2)</h3>
+					<h4>Contribute to the community-run sites!</h4>
+					<div class="fixed-width-list">
+						<ul>
+							<li>github.com/django/<a href="https://djangoproject.com">djangoproject.com</a></li>
+							<li>github.com/django/<a href="https://code.djangoproject.com">code.djangoproject.com</a></li>
+							<li>github.com/django/<a href="https://djangosnippets.org">djangosnippets.org</a></li>
+							<li>github.com/djangopackages/<a href="https://djangopackages.org">djangopackages</a></li>
+							<li>github.com/DjangoGirls/<a href="https://djangogirls.org">djangogirls</a></li>
+							<li>github.com/classy-python/<a href="https://ccbv.co.uk">ccbv</a><br />(Classy Class-Based Views)</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Did you know that the djangoproject website, Django's ticketing system and the djangopackages.org website are all open source projects that are maintained by the community? They all could use some extra hands. These projects are a little easier to contribute to. They don't have strict backwards compatibility rules. Plus their release cycles are shorter meaning you can see your changes in the wild much quicker. Seems like a win win to me.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 3)</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li>Contribute to other Python and Django packages!</li>
+							<li><a href="https://djangopackages.org">djangopackages.org</a></li>
+							<li>Look for packages that interest you</li>
+							<li>Consider packages you use regularly</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Expanding our horizon a bit further, there are hundreds of Django and Python packages out there. Most of which are open to new contributors. One way to find these packages is to use djangopackages.org. From there you can select which projects may of interest you. I would recommend picking something you use on a regular basis.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to code (part 4)</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li>Create your own!</li>
+							<li>Look for a need that's not being met</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						You could also create your own third-party package. Perhaps you have your own idea on how Django can handle components in the Django template language? Or maybe you want to add a third-party panel to the django debug toolbar. If you see a need that's not being met, you can be the person to solve it.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to organize</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li>Run for the Board and Steering Council</li>
+							<li class="muted">Volunteer for a Working Group</li>
+							<li class="muted">Be a conference organizer</li>
+							<li class="muted">Volunteer with DjangoGirls+ and local meet-ups</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						The next group is around community organizing. You could help define Django's strategy and direction by running for the DSF board or the Steering Council. While the Steering Council is responsible for the technical aspect of Django, The board guides the direction of the marketing, governance and outreach activities of the Django community. The board has elections every year and anyone can run. Though I would say most people who are elected are people who have been around the community for at least a year.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to organize</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li class="muted">Run for the Board and Steering Council</li>
+							<li>Volunteer for a Working Group</li>
+							<li class="list-style-none">
+								<ul>
+									<li>Small groups with a specific mission</li>
+									<li><a href="https://github.com/django/dsf-working-groups">github.com/django/dsf-working-groups</a></li>
+									<li>See the Issues for working groups being created</li>
+								</ul>
+							</li>
+							<li class="muted">Be a conference organizer</li>
+							<li class="muted">Volunteer with DjangoGirls+ and local meet-ups</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						If you're more of a tactical, mission focused volunteer or just want to get your foot in the door, a Working Group may better. These are small groups of people that the DSF board has delegated some responsibility to. For example, the website working group is responsible for the djangoproject.com site.  The Working Groups currently accepting volunteers are: the accessibility team, code of conduct, fundraising, website, social media, and online community. You can find more information about each of these in their working group definitions on the dsf-working-groups repo on github.
+						<br /><br />
+						There are also others in the works, package maintainers, google summer of code and diversity and inclusion. These are in the idea stages, so you could help influence their direction significantly by getting involved now. These can be found in the issues on the dsf-working-groups repository on github.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to organize</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li class="muted">Run for the Board and Steering Council</li>
+							<li class="muted">Volunteer for a Working Group</li>
+							<li>Be a conference organizer</li>
+							<li class="list-style-none">
+								<ul>
+									<li>Conferences are vital to the Django community!</li>
+									<li>Send an email that you're interested</li>
+									<li>hello@djangocon.africa, 2025@djangocon.eu, hello@djangocon.us</li>
+								</ul>
+							</li>
+							<li class="muted">Volunteer with DjangoGirls+ and local meet-ups</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						You can also help organize Django conferences and events.
+						<br /><br />
+						A big shoutout to the DjangoCon Africa organizing team for this year's conference! Well done, I've been really enjoying my time, so thank you.
+						<br /><br />
+						Conferences are one of the most important aspects of our community. They help the community bond and grow, it helps us make decisions and leads to innovation in the community. If you want to have a significant impact on the Django community, consider becoming an organizer for a conference!
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to organize</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li class="muted">Run for the Board and Steering Council</li>
+							<li class="muted">Volunteer for a Working Group</li>
+							<li class="muted">Be a conference organizer</li>
+							<li>Volunteer with DjangoGirls+ and local meet-ups</li>
+							<li class="list-style-none">
+								<ul>
+									<li><a href="https://djangogirls.org">djangogirls.org</a></li>
+									<li><a href="https://djangoproject.com/community/local/">djangoproject.com/community/local/</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Similarly, there are Django Girls+ events and local meet ups. These are great ways to meet fellow developers in your area, grow your network and pay it forward. You can find Django Girls+ events at djangogirls.org and local meetups on the Local Django Communities page at .djangoproject.com/community/local/
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to engage</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li>Connecting with each other sustains the community</li>
+							<li>Join where you feel comfortable</li>
+							<li>Social Media: Mastodon, X, BlueSky, Reddit</li>
+							<li>Forum: <a href="https://forum.djangoproject.com/">forum.djangoproject.com</a></li>
+							<li>Discord: <a href="https://chat.djangoproject.com">chat.djangoproject.com</a></li>
+						</ul>
+					</div>
+					<aside class="notes">
+						The next category of opportunities is around engaging with the community. Having people connect with one another by sharing ideas and their experiences helps sustains the community. Since meeting up in person is expensive, we should make a conscious effort to engage with one another online. We can do this whereever we feel most comfortable. For some people it'll be social media. For others, maybe the forum, WhatsApp, discord or Reddit. Sharing your thoughts and ideas, asking questions and answers others, it helps to connect our community.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to engage</h3>
+					<h3><a href="https://mastodon.social/tags/FediDonutFriday"><code>#FediDonutFriday</code></a></h3>
+					<div class="container">
+						<div class="col"><img style="max-height: 60vh" src="images/fedi_donut_1.png" /></div>
+						<div class="col"><img style="max-height: 60vh" src="images/fedi_donut_2.png" /></div>
+						<div class="col"><img style="max-height: 60vh" src="images/fedi_donut_3.png" /></div>
+						<div class="col"><img style="max-height: 60vh" src="images/fedi_donut_4.png" /></div>
+					</div>
+					<aside class="notes">
+						There's a hashtag that Seth Larson, a Python Security Developer in Residence, started on mastodon, called FediDonutFriday and it's one of my favorites. Mainly because it gives me permission to eat more of favorite thing, donuts. But also because it helps me share small parts of my life with others and allows me to have a window into others' lives. These personal types of interactions are part of what keeps me engaged with the community.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Opportunities to create content</h3>
+					<div class="fixed-width-list">
+						<ul>
+							<li>Write blog posts</li>
+							<li>Post videos</li>
+							<li>Start a podcast</li>
+							<li><a href="https://django-news.com/">django-news.com</a> - Newsletter for Django content</li>
+							<li><a href="https://djangobook.com/">djangobook.com</a> - Books about Django</li>
+							<li><a href="https://djangotv.com/">djangotv.com</a> - Video aggregator for Django</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						The last category is around content creation. There are several avenues you can take here in both subject and medium. You could write blog posts, create videos or start a new podcast. If you do any of which, please post about it on social media with the Django hashtag and share it on the forum or django discords. I want to hear about it. Your topics can be wide and varied. You could talk about the Django community, you could talk about your local community. You can talk about your favorite packages, or a particular difficult bug you solved. It doesn't have to be long, or frequent or the best. The community wants to see people try and we want to support each other.
+						<br /><br />
+						You can also create a community site. For example, Django News is a newsletter for django conent, Django Book is an aggregation of all the django books, and Django TV which is an aggregation of all Django video content. In the past I've harbored fascinations with creating a curated knowledge base for Django. There are so many possibilities for what could be created, so if you see a need in the community that's not being met, I encourage you to build that!
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Where to invest your time?</h2>
+					<aside class="notes">
+						Okay, so at this point it should be clear that there's several places you could volunteer your time and impact our community significantly. If you're feeling overwhelmed by the number of opportunities, that's reasonable. There's a lot of choices and you should want to maximize your growth. So let's talk about how to decide where to invest your time.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Participate where the benefits for you most outweigh the costs</h2>
+					<aside class="notes">
+						You should participate in open-source where the benefits for you most outweigh the costs. The benefits are going to vary for person to person. They can be extrinsic, from outside forces or intrinsic, from within yourself. The costs are going to be easier to identify. They are stress, time, and energy. Time and energy are relatively fixed. You only have so much of it each day.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<img style="max-height: 30vh;" src="images/know_your_limits.png" />
+					<h3>"Know Your Limits: On Surviving Open Source" by Carlton Gibson</h3>
+					<aside class="notes">
+						Stress is a little variable. Over time, a person can learn to tolerate a lot of stress. We need to be careful in this regard because it's easy to say, "I'm taking on this stress because I don't want the next person to deal with it." This is warranted in some cases, but it shouldn't define your OSS journey. This should be fun after all!
+						<br /><br />
+						For more on this topic, please watch Carlton Gibson's talk, "Know Your Limits: On Surviving Open Source"
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>What are the benefits of OSS for you?</h3>
+					<aside class="notes">
+						Let's dive further into how to evaluate the benefits. We're going to need to do some self-reflection. You should consider the following questions:
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Why are you participating in open-source?</h3>
+					<aside class="notes">
+						Why are you participating in open-source? Is it so you can find a job? Is it because your company depends on it? Do you just like writing code? Do you want your technical expertise to be seen and acknowledged? This is going to be specific to you.
+						<br /><br />
+						Nobody can tell you why you participate in open-source. However, understanding your why can make it easier for you to evaluate opportunities. For example, if you are maintaining a package only because your company relies on it, and then your companies shifts to a new language, that's probably a good reason for you to transition the package to another person. It's easier to recognize that need for transition if you understand why you were contributing in the first place.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>What motivates you?</h3>
+					<aside class="notes">
+						The next question is, what motivates you? Are you the type of person who likes solving a technical problem? Or maybe you really enjoy structuring a library in the perfect way. Or maybe you're like me and you are motivated by helping and collaborating with others. For me, I've realized if an opportunity requires me to go it alone then I'm going to struggle with it.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>What interests you?</h3>
+					<aside class="notes">
+						You should also ask, what excites/interests you? If you know that you find databases fascinating, try to find opportunities that puts you in contact with databases.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>What skills do you want to learn?</h3>
+					<aside class="notes">
+						Lastly, consider what skills you want to learn. You're always going to learn new things contributing to open source. You should try to align those things to what you actually want to know. For example, if you want to learn how to do some basic graphic design, joining the social media team for a conference or a meetup will provide low risk opportunities. Or if you want to improve your debugging skills, helping people on the Forum, Discord or Stack Overflow is a great way to do that.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Look for alignment between your needs and the opportunity's outcomes</h3>
+					<aside class="notes">
+						The reason these questions are important is that it helps you evaluate what opportunities will keep you interested emotionally and helps you grow as a person. You're looking to identify alignment between your needs and the opportunity's outcomes. The greater the alignment, the more likely you're going to enjoy it. If the alignment is poor, over time you'll find that you have to summon the energy to contribute. In the worst case you could burn out, which can takes months or years to recover from. So please, for your own health, be selective about where you contribute.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>What opportunities are currently available?</h3>
+					<div class="fixed-width-list">
+						<ul style="margin-top: 1em">
+							<li>DSF Board and Steering Council hold elections</li>
+							<li>Various orgs, working groups and teams are invite-only</li>
+							<li>Major conference roles are selected months in advance</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Now that you have an understanding of what you're looking for in an opportunity, we need to take a look around the community to see which are available. Remember that list of roles and teams that need help? Only some of those are available right now.
+						<br /><br />
+						For example, the Board and the Steering Council have their members elected by the individual members of the Django Software Foundation. Then there are groups that select their own members such as the Security Team. Conferences tend to accept organizers all year, but most roles are set early on in the planning stage.
+						<br /><br />
+						Beyond the schedules of roles, there are requirements for some roles in the community. In order to be elected to a position, you need to be an active community member for a while. If that's you, please run!
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h3>Entry level opportunities</h3>
+					<div class="fixed-width-list">
+						<ul style="margin-top: 1em">
+							<li>Triage issues, contribute PRs, review PRs</li>
+							<li>Volunteer at events and conferences</li>
+							<li>Write blog posts about your experiences</li>
+							<li>Ask and answer questions on the Forum or Discord</li>
+							<li>Participate in conversations on Social Media</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						If you're someone who is newer to the community, some entry level opportunities are:
+						<br /><br />
+						- Triage issues and/or contribute PRs for Django or popular packages<br />
+						- Volunteer at the events and conferences you attend<br />
+						- Write blog posts about your experiences<br />
+						- Ask and answer questions on the Forum or Discord<br />
+						- Participate in conversations on Social Media<br />
+						<br /><br />
+						Please remember, you don't have to do all these things. Though you should try to be consistent about your participation. I think a good frequency for most of these is monthly. If you write a blog post and participate in a few threads on the forum every month for a year, you will feel very connected to the Django community. You will start recognizing names and avatars. And people will start recognizing you.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<div class="r-stack">
+					<h2>Over time, you'll find opportunities unique to you</h2>
+					</div>
+					<aside class="notes">
+						There's another reason to do things periodically while avoiding trying to do all the things. As you engage with communities on a regular basis, something cool will happen. You're going to start seeing the problems that need solving that nobody is working on. There's really no other way to find these other than to immerse yourself in the community and wait. I've seen it happen multiple times.
+						<br /><br />
+						My time answering help questions for Django lead to proposing a debugging tutorial for a conference. Maybe I would have eventually proposed it, but maybe not. It's certainly possible that the years I spent helping other debug their problems gave me the confidence I needed to teach others.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<img style="max-width: 100%" src="images/rachell_recruiting.png" />
+					<h3>Rachell setting up an initial call for Djangonaut Space🚀</h3>
+					<aside class="notes">
+						Another time it happened for me was when Djangonaut Space was forming. Because I had availability in my schedule and I was engaged with the Django discord community, I saw Rachell Calhoun ask this question about forming a team to help people contribute to Django. If already had a full plate, I wouldn't have been able to commit to this. By not over-committing, I allowed my future self to participate in the coolest initiative I've been a part of.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<img style="max-width: 100%" src="images/xterm_dry_orm.png" />
+					<h3>Screenshot of <a href="https://dryorm.xterm.info/">dryorm.xterm.info</a></h3>
+					<aside class="notes">
+						I've seen this happen for other people too. Xterm is an official helper on the Django discord. I've seen them around for a few years. Then in May they resurrected their Dry ORM project that allows a person to write Django models, run some code with those models on a web app then see the queries that ran. Xterm saw the need for this project while helping people. The clarity to recognize the problem only came because they were immersed in the Django Discord.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>The Lilian Method</h2>
+					<h3 style="margin-top:10vh">Contribute where it helps you on <span style="text-decoration: underline">your journey</span></h3>
+					<aside class="notes">
+						The last thing I want to mention about choosing where to contribute is what my friend Lilian shared with me. She chooses how to contribute based on what that opportunity will teach her and if it help with a longer term goal. It's such a healthy, productive and positive way to approach open source. Its genius the more you think about it too.
+						<br /><br />
+						Eventually you're going to hit a hard challenge. Something that's going to make you ask, "is this worth it?". For example, if you're working on some small, weird bug, it's possible only a few dozen people will benefit from it being fixed.If we're only asking "is ask worth it?" based on the time spent and the number of people impacted, then we shouldn't work on it.
+						<br /><br />
+						However, if you factor in the knowledge gained, relationships built and the doors being opened while working on the issue, it's more likely that it is worth it.
+						<br /><br />
+						That's why Lilian's selection method is genius. It's designed to help move herself forward when she eventually hits those road blocks. She knows what she's working on is helping her learn more and that the journey is worth more than the bug being fixed. So when choosing where to contribute, be like Lilian.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Evaluating opportunities</h2>
+					<div class="fixed-width-list">
+						<ol>
+							<li>Don't try to do all the things</li>
+							<li>Do try to be consistent with periodic contributions</li>
+							<li>Engaging over time will lead to more opportunities</li>
+							<li>Choose opportunities that build towards your goals</li>
+						</ol>
+					</div>
+					<aside class="notes">
+						That was a lot. Let me summarize things a bit. Here are the things to keep in mind when evaluating opportunities:<br /><br />
+						1. Don't try to do all the things<br />
+						2. Do try to be consistent with periodic contributions<br />
+						3. Engaging over time will lead to more opportunities<br />
+						4. Choose opportunities that build towards your goals<br />
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Why should you participate in OSS?</h2>
+					<aside class="notes">
+						Now that you are more aware of what's going on in the community, places you can contribute and how to pick where to contribute, I want to talk about why to participate.
+						<br /><br />
+						My number one reason why you should contribute is that you'll learn from others.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>You'll learn from others</h2>
+					<aside class="notes">
+						I help with the package, django-simple-history where I learn from the other maintainer Anders / ddabble. He crafts code and PRs in a way that is easy to understand. Working with him exposes me to an expert's way of thinking, and he creates a friendly environment that's open to questions. With each interaction, I learn something new on how to be better myself.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>An enthusiastic and open mindset increases learning</h2>
+					<br />
+					<h5>"Interest Matters: The Importance of Promoting Interest in Education"</h5>
+					<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5839644/">pmc.ncbi.nlm.nih.gov/articles/PMC5839644/</a></p>
+					<aside class="notes">
+						Then there is the friendship consideration. I've noticed that when I make friends in the community and then those friends excitedly write about a topic, I'm physically compelled to read it. I approach these topics with an enthusiastic and open mindset, which helps me learn the material quicker. It doesn't hurt I can ask the person several follow-up questions too.
+						<br /><br />
+						So I'm part of a co-writing group with Matthias Kestenholz and Sarah Abderemane. I know Matthias from maintaining the Django Debug Toolbar together and Sarah, well she's everywhere, not to mention she's here. This writing group is just us silently writing on a voice call every other week. I highly recommend this approach to writing if you struggle to make time for it. But anyway, because of that writing group, when Matthias writes about maintaining referential integrity in a JSON field, you can bet I'm going to read it. Or Sarah, publishes an accessibility checklist, I'm reading it and trying to figure out how to use it work. The more these two write, the more I learn.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<img style="max-height: 50vh" src="images/jeff_tim_velda.png" />
+					<h4>Velda Kiara: Celebrating wins as they are</h4>
+					<h4>Jeff Triplett: Look at issues holistically</h4>
+					<aside class="notes">
+						Beyond the technical growth, you will grow as a human too. My friend Velda Kiara who is in the front of the photo who I know through DjangoCon US and Djangonaut Space has taught me and continues to teach me to take the wins as they are and to stop undercutting them. My friend Jeff Triplett, seen in the back next to me,  I met through DjangoCon US. He has taught me how to look at things things from a more measured and holistic viewpoint.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<img style="max-height: 50vh" src="images/rachell_and_tim.jpg" />
+					<h2>Rachell Calhoun: Calling people in</h2>
+					<p>Photo credit: Bartek Pawlik - <a href="https://bartpawlik.format.com">bartpawlik.format.com</a></p>
+					<aside class="notes">
+						My friend Rachell Calhoun, who I met through Djangonaut Space, helped me improve as a community organizer and to find better ways to provide critical feedback. Specifically the action of calling people in place of calling people out. Calling people in is less likely to cause a person to shutdown entirely and more likely to result in the behavior you want.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<img style="max-height: 50vh" src="images/natalia_and_tim.jpg" />
+					<h2>Natalia Bidart: Being more welcoming to others</h2>
+					<aside class="notes">
+						My friend Natalia Bidart who I met through DjangoCon US, has helped me focus more on being welcoming to others. Such as showing acknowledgement and gratitude towards all contributions as well as recognizing and reducing language that excludes people.
+						<br /><br />
+						So my advice to you is, if you're the type of person who wants to grow and get better, consider contributing to Django.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Why should you participate in OSS?</h2>
+					<aside class="notes">
+						Not entirely convinced yet? Okay that's fair. Let's try an oldie but a goodie.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2 class="muted">Why should you participate in OSS?</h2>
+					<h2>It will help you in your career</h2>
+					<aside class="notes">
+						Contributing to open source will help you in your career. That is true, but it may not be true in the way we want. Contributing to open source is like participating in an internship. It's a lot of work and you don't realize how valuable it is until you're well into it.
+						<br /><br />
+						It's the entirety of the experience that's beneficial rather than any one specific thing. It exposes you to new ideas and concepts. It helps form good habits. It puts you in touch with people who can provide advice and feedback. Contributing to open-source is one of those things that becomes more valuable the longer you participate.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>Why should you participate in OSS?</h2>
+					<aside class="notes">
+						I'm pretty sure I have you all convinced, but to be sure, I'm going to make one more pitch.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2 class="muted">Why should you participate in OSS?</h2>
+					<div class="r-stack">
+						<h2 data-fragment-index="1" class="fragment fade-out">It introduces you to new people and grows your network</h2>
+						<div data-fragment-index="1" class="fragment">
+							<h4>A strong sense of community is correlated with better mental health</h4>
+							<h5><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7585135/">pmc.ncbi.nlm.nih.gov/articles/PMC7585135/</a></h5>
+						</div>
+					</div>
+					<aside class="notes">
+						My last argument is that you should contribute because it introduces you to other people and grows your network.
+						<br /><br />
+						*transition*
+						Beyond the job opportunities they can provide, the lessons they can teach you and the mentorship others can offer, building friendships and connections is what gives you a sense of community. A strong sense of community is correlated with better mental health. It is associated with reduced symptoms of depression, anxiety and stress. That's pretty dang cool.
+						<br /><br />
+						Remember how I was telling you about my hometown and how it was an insulated experience. I had a large family that primarily stayed in that town. I didn't know many people outside of that community. The turning point for me was at DjangoCon US 2022 in San Diego. Being there, I felt like I was finally amongst my people. That experience paved the way for me to invest into the Django community and build deep, meaningful connections with the community.
+						<br /><br />
+						In fact, in preparation for this talk, I able to ask a few friends from across Africa to review my outline for cultural misunderstandings. It was important to me to ask people who I had built a connection with, people that I knew. It's a personal achievement of mine that I have friends across the globe who want to see me succeed. That win for me was only possible because the Django community strives to be open, welcoming and more diverse. Contributing allows each of us to grow personally by meeting new people from different cultures.
+					</aside>
+				</section>
+				<section data-auto-animate>
+					<h2>What I want you to take away</h2>
+					<div class="fixed-width-list">
+						<ul>
+							<li>Consistency and perseverance are key</li>
+							<li>Self-reflect on your goals and desires</li>
+							<li>Find alignment between your goals and OSS</li>
+							<li>Engaging will reveal more opportunities</li>
+							<li>You will learn and grow</li>
+						</ul>
+					</div>
+					<aside class="notes">
+						Alright, let's start wrapping this up.
+						<br />Remember when contributing to open source consistency and perseverance are key.
+						<br />With Django, there are several opportunities available to you across the community.
+						<br />When reviewing those opportunities, self-reflect on your goals and desires.
+						<br /><br />The more aligned the opportunity is with your own goals, the more engaged you will be and you'll be less likely to burnout.
+						<br /><br />Over time, you'll start seeing underlying challenges the community is facing and opportunities unique to you will start appearing.
+						<br /><br />As you contribute, you're going to learn from others and grow. Not only as a developer but as a human.
+						<br /><br />You'll find people around the globe who want to see you succeed and cheer you on as you take on bigger and bigger challenges.
+						<br /><br />
+						And if you're like me, and you've never quite fit in. You might realize that this group of people, the Django community. Is the group of people who you've been looking for the whole time.
+						<br />
+						So when you're ready, come join us.
+					</aside>
+				</section>
+				<section>
+					<h1>Ahsanteni</h1>
+					schillingt@better-simple.com
+					<br/>@CodenameTim
+					<br/>@CodenameTim@mastodon.social
+					<aside class="notes">
+						Ahsanteni, muwe na wakati mwema
+					</aside>
+				</section>
 			</div>
+			<footer class="slide-footer">
+				<span class="slide-footer-content">Tim Schilling - www.better-simple.com</span>
+			</footer>
 		</div>
 
 		<script src="dist/reveal.js"></script>
@@ -31,6 +1087,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				width: '100%',
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]

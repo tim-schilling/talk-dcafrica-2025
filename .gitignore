@@ -149,3 +149,7 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
+
+# Exclude default folders of reveal
+examples/
+test/
