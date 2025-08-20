@@ -9,4 +9,6 @@ The slides are [available here](https://github.com/tim-schilling/talk-dcafrica-2
 ```bash
 npm install
 npm start
+open http://localhost:8000
+# Press S in browser to view speaker notes 
 ```
